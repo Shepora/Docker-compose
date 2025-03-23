@@ -1,0 +1,18 @@
+services:
+  mysql:
+    image: mysql:latest
+    container_name: container_Discoteca_Luxury
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: DiscotecaLuxury
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 1234
+    ports:
+      - "3311:3306"
+    volumes:
+      - C:\Users\alarc\Desktop\Discoteca:/var/lib/mysql  
+      - C:\Users\alarc\Desktop\DockerCompose\init:/docker-entrypoint-initdb.d
+
+volumes:
+  mysql_data:
