@@ -1,18 +1,20 @@
+version: '3.8'
+
 services:
   mysql:
-    image: mysql:latest
-    container_name: container_Discoteca_Luxury
+    image: mysql:latest 
+    container_name: Discoteca_Luxury
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 1234
-      MYSQL_DATABASE: DiscotecaLuxury
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 1234
+      MYSQL_ROOT_PASSWORD: 1234  
+      MYSQL_DATABASE: DiscotecaLuxury             
+      MYSQL_USER: usuario               
+      MYSQL_PASSWORD: 1234           
     ports:
-      - "3311:3306"
+      - "3309:3306"  
     volumes:
       - C:\Users\alarc\Desktop\Discoteca:/var/lib/mysql  
-      - C:\Users\alarc\Desktop\DockerCompose\init:/docker-entrypoint-initdb.d
+      - C:\Users\alarc\Desktop\DockerCompose/init.sql:/docker-entrypoint-initdb.d/init.sql  
 
 volumes:
   mysql_data:
